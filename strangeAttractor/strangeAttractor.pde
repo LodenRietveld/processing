@@ -10,12 +10,14 @@ int  initialIterations = 100, // initial number of iterations
 
 boolean running = true;
 
+
 void setup() {
 
   frameRate(24);
-  size(displayWidth, displayHeight, OPENGL);
+  size(displayWidth, displayHeight, P2D);
   smooth(16);
   background(0);
+  
 
   for (int i = 0; i < initialIterations; i++) {
 
@@ -27,25 +29,26 @@ void setup() {
     x = xnew;
     y = ynew;
   }
+
 }
+
 
 void draw() {
   //background(0);
-  stroke(200, 200, 160);
-  strokeWeight(1);
+  stroke(220, 220, 160);
+  strokeWeight(2);
   //strangeAttractor(0);
   if (running) {
     strangeAttractor(0.01);
   }
 
 
+
   noStroke();
-  fill(0, 0, 0, 15);
+  fill(0, 0, 0, 60);
   rect(0, 0, width, height);
-  
+
   saveFrame();
-
-
   a += 0.001;
 }
 
